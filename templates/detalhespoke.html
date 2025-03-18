@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Pokedex!</title>
+</head>
+<body>
+    <header>
+        <img src="../static/img/logo.png" alt="logo" />
+        <h1>Quem é esse pokemon!</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="pokemon">
+                {% if not imagem %}
+                    <img src="..." alt="..." />
+                {% else %}
+                    <img src="{{ imagem }}" />
+                    <p>Nome: {{ nome }} <br> Numeração: {{ numero }} <br> Tipo: {{ tipos | join(' e ')}} <br> Altura: {{ altura }} cm <br> Peso: {{ peso }} Kg <br> Habilidade: {{ habilidade | join(' ou ') }} <br> <a href="/">Retornar</a>  </p>
+                {% endif %}
+                {% if erro %}
+                    <p>{{ erro }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Desenvolvido por Gabriel Alves.</p>
+    </footer>
+</body>
+</html>
